@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "PrimeNumberHelper.h"
 
 #define FILE_TO_READ @"txt1"//@"txt2", @"txt3"
+
+#define FILE_TO_SAVE @"resultFile.txt"
 
 @interface ViewController ()
 
@@ -30,9 +33,10 @@
     
     NSArray *numbersArray = [fileContents componentsSeparatedByString:@","];
     NSMutableArray* simpleNumbers = [[NSMutableArray alloc] init];
+    PrimeNumberHelper* primeHelper = [PrimeNumberHelper sharedInstance];
     for (NSString* numberStr in numbersArray){
         int numberInt = numberStr.intValue;
-        if ([self isPrime:numberInt]){
+        if ([primeHelper isPrime:numberInt]){
             [simpleNumbers addObject:numberStr];
         }
     }
@@ -45,25 +49,6 @@
         _resultTextView.text = @"There're no prime numbers";
     }
     
-}
-
-- (BOOL)isPrime:(int)number{
-    BOOL isPrime = YES;
-    
-    if (number <= 1) {
-        isPrime = YES;
-    }
-    
-    if (number != 2 && number != 1){
-        
-        for (int i = 2; i < number; i++){
-            
-            if (number % i == 0) {
-                isPrime = NO;
-            }
-        }
-    }
-    return isPrime;
 }
 
 - (NSString*)readFromFile:(NSString*)fileName{
@@ -84,7 +69,7 @@
 - (void)saveNumberIntoFile:(NSString*)numberAsString{
     NSError *error;
     
-    NSString *filePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:@"resultFile.txt"];
+    NSString *filePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:FILE_TO_SAVE];
     [numberAsString writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:&error];
     if (!error){
         NSLog(@"Success write numbers into file");
@@ -96,7 +81,7 @@
 }
 
 - (void)loadResultFromFile{
-    NSString *filePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:@"resultFile.txt"];
+    NSString *filePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:FILE_TO_SAVE];
     NSError *error;
     NSString *fileContents = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:&error];
     

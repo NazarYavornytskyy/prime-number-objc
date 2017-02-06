@@ -17,6 +17,7 @@
 		BB32DCD61E48D059005F98E6 /* txt2.txt in Resources */ = {isa = PBXBuildFile; fileRef = BB32DCD31E48D059005F98E6 /* txt2.txt */; };
 		BB32DCD71E48D059005F98E6 /* txt3.txt in Resources */ = {isa = PBXBuildFile; fileRef = BB32DCD41E48D059005F98E6 /* txt3.txt */; };
 		BB32DCDB1E48DD5A005F98E6 /* resultFile.txt in Resources */ = {isa = PBXBuildFile; fileRef = BB32DCDA1E48DD5A005F98E6 /* resultFile.txt */; };
+		BB32DCDF1E48E094005F98E6 /* PrimeNumberHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BB32DCDE1E48E094005F98E6 /* PrimeNumberHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,8 @@
 		BB32DCD31E48D059005F98E6 /* txt2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = txt2.txt; path = Files/txt2.txt; sourceTree = "<group>"; };
 		BB32DCD41E48D059005F98E6 /* txt3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = txt3.txt; path = Files/txt3.txt; sourceTree = "<group>"; };
 		BB32DCDA1E48DD5A005F98E6 /* resultFile.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = resultFile.txt; path = Files/resultFile.txt; sourceTree = "<group>"; };
+		BB32DCDD1E48E094005F98E6 /* PrimeNumberHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrimeNumberHelper.h; path = Helper/PrimeNumberHelper.h; sourceTree = "<group>"; };
+		BB32DCDE1E48E094005F98E6 /* PrimeNumberHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PrimeNumberHelper.m; path = Helper/PrimeNumberHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +69,7 @@
 		BB32DCB91E48CEAF005F98E6 /* SimpleNumberSearcher */ = {
 			isa = PBXGroup;
 			children = (
+				BB32DCDC1E48E075005F98E6 /* Helper */,
 				BB32DCD11E48CF14005F98E6 /* Files */,
 				BB32DCBD1E48CEAF005F98E6 /* AppDelegate.h */,
 				BB32DCBE1E48CEAF005F98E6 /* AppDelegate.m */,
@@ -97,6 +101,15 @@
 				BB32DCD41E48D059005F98E6 /* txt3.txt */,
 			);
 			name = Files;
+			sourceTree = "<group>";
+		};
+		BB32DCDC1E48E075005F98E6 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				BB32DCDD1E48E094005F98E6 /* PrimeNumberHelper.h */,
+				BB32DCDE1E48E094005F98E6 /* PrimeNumberHelper.m */,
+			);
+			name = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +188,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB32DCDF1E48E094005F98E6 /* PrimeNumberHelper.m in Sources */,
 				BB32DCC21E48CEAF005F98E6 /* ViewController.m in Sources */,
 				BB32DCBF1E48CEAF005F98E6 /* AppDelegate.m in Sources */,
 				BB32DCBC1E48CEAF005F98E6 /* main.m in Sources */,
@@ -334,6 +348,7 @@
 				BB32DCD01E48CEAF005F98E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
